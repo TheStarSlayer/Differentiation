@@ -1,5 +1,3 @@
-
-
 while True:
     def f1():
             title = 'Simple Differentiation'
@@ -46,6 +44,4 @@ while True:
     loop_ = input('Want a solution for a different problem? Press y or hit enter to end program: \n')
 
     if loop_ != 'y':
-        break
-
-#for multiple terms, you can add each term to a list, then do an operation on each term and concantanate them    
+        break    
