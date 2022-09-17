@@ -1,47 +1,47 @@
-while True:
-    def f1():
-            title = 'Simple Differentiation'
-            print(title.center(100))        
-            
-            f1.a = str(input('Enter the variable: \n')) 
+title = 'Simple Differentiation -- Polynomials'
+print(title.center(100)) 
 
-            forbidden_nos = ['0','1','2','3','4','5','6','7','8','9']
-            if f1.a in forbidden_nos:
-              print('Numbers cannot be variables!! Replacing number with \'a\'')  
-              f1.a = 'a'
-            
-            f1.coeff = int(input('Enter the coefficient of the variable: \n'))
-            f1.b = int(input('Enter it\'s power: \n'))
+n = int(input('Enter the number of terms in the equation:\n'))
+list1= []
+list2 = []
 
-            c = str(f1.coeff)+f1.a+'^'+str(f1.b)
+for x in range (n):
 
-            d = input(f'Your equation is {c}. Do you want to change it? If yes, then press y. If alright, hit enter: \n')
-            print(d)
-            
-            if d == 'y':
-                f1()
-            else:
-                pass
+    a = str(input('Enter the variable: \n')) 
 
-    f1()
+    forbidden_nos = ['0','1','2','3','4','5','6','7','8','9']
+    if a in forbidden_nos:
+     print('Numbers cannot be variables!! Replacing number with \'a\'')  
+     a = 'a'
+                
+    coeff = int(input('Enter the coefficient of the variable: \n'))
+    b = int(input('Enter it\'s power: \n'))
+     
+    c = str(coeff)+a+'^'+str(b)
 
-    if len(f1.a) != 1:
-            print('Variable is only 1 letter')
-            f1()
+    z = b-1
+    dif = str(b*coeff)+a+'^'+str(z)
 
-    z = f1.b-1
+    list1.append(c)
+    list2.append(dif)
+    
+poly = ''
 
-    dif = str(f1.b*f1.coeff)+f1.a+'^'+str(z)
-        
-    if f1.b == 0:
-            dif = 0
+for kk in list1:
+    if kk == list1[-1]:
+        poly = poly+kk
+    else:
+        poly = poly+kk+'+'
 
-    if z == 0:
-            dif = f1.coeff
+d = input(f'Your equation is {poly}.')
+print(d)
 
-    print(f'Differentiating the equation given, the answer is: \n{dif}.')   
+doly = ''
 
-    loop_ = input('Want a solution for a different problem? Press y or hit enter to end program: \n')
+for cc in list2:
+    if cc == list2[-1]:
+        doly = doly+cc
+    else:
+        doly = doly+cc+'+'
 
-    if loop_ != 'y':
-        break    
+print(f'Differentiating the given equation, the result is {doly}.')
